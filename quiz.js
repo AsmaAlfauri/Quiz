@@ -37,45 +37,53 @@ isMyAgeAndExpEnough(35,1)
 =>"you need more exp"
 */
 
+function isMyAgeAndExpEnough(age, yExp) {
+    if ((age >= 25 && age < 30) && yExp >= 5) {
+        return "you are awesome"
+    } else if (age >= 30 && yExp >= 5) {
+        return "you are goood"
+    } else if (age >= 25 && (yExp < 5 && yExp > 2)) {
+        return "dont worry you need to work on your self more "
+    } else if (age <= 24) {
+        return "you still young"
+    } else if (yExp <= 2) {
+        return "you need more exp"
+    }
+}
+console.log(isMyAgeAndExpEnough(26, 7))
+console.log(isMyAgeAndExpEnough(32, 9))
+console.log(isMyAgeAndExpEnough(26, 3))
+console.log(isMyAgeAndExpEnough(23, 12))
+console.log(isMyAgeAndExpEnough(26, 1))
 
 
 
 
 
 
+// Q2:
+// Write a function called countDown
+// that takes one parameter
+// and return a string represent the count down from the number
+// that insert to 0
+// instead of 0 need to a have "done"
+// between each number a comma and space
+// ** you need to use recursion
 
-/*
-Q2:
-Write a function called countDown
-that takes one parameter
-and return a string represent the count down from the number
-that insert to 0
-instead of 0 need to ahve "done"
-between each number a comma and space
-** you need to use recursion
+// countDown(5)
+// => "5, 4, 3, 2, 1, done"
 
-countDown(5)
-=> "5, 4, 3, 2, 1, done"
+// countDown(2)
+// => "2, 1, done"
 
-countDown(2)
-=> "2, 1, done"
+// countDown(7)
+// => "7, 6, 5, 4, 3, 2, 1, done"
 
-countDown(7)
-=> "7, 6, 5, 4, 3, 2, 1, done"
+function countDown(count) {
+    if (count === 0) {
+        return "done"
+    }
 
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return count + ", " + countDown(count - 1)
+}
+console.log(countDown(9))
